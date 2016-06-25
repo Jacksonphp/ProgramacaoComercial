@@ -10,34 +10,44 @@ public Cofrinho() {
 
 }
 
-public void adiciona(Moeda m){
-  moedas.add(m);
+public void adicionar(Moeda m){
+	moedas.add(m);
 }
 
-public int QtdMoedas(){
+public double CaucularTotal(){
+	double soma = 0;
+	for(int i=0; i<moedas.size();i++){
+		soma+=moedas.get(i).getValor();
+	}
+	return soma;
+}
+
+public int QuantasMoedas(){
 	return moedas.size();
 }
 
-public double CalculaTotal(){
- double total = 0;
- for(Moeda moeda: moedas){
-  total+=moeda.valor;
- }
- return total;
-}
-
-public int MesmaMoeda(){
-	int qtd=0;
-	for(int i=0;1<moedas.size();i++){
-}
-	return qtd;
+public int MesmoValor(double valor){
+	int igual = 0;
+	for(Moeda m:moedas){
+		if(m.getValor() == valor){
+			igual++;
+		}
+	}
+	return igual;
 }
 
 public double MaiorValor(){
-	double maior = 0;
+	double maior = moedas.get(0).getValor();
 
+	for(Moeda m:moedas){
+      if(m.getValor()>maior){
+    	  maior=m.getValor();
+      }
+	}
 	return maior;
 }
 
 
 }
+
+

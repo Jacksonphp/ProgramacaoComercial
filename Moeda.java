@@ -1,8 +1,8 @@
 package br.ifpi.exercicio;
 
 public class Moeda {
- double valor;
- String nome;
+ private double valor;
+ private String nome;
 
 public Moeda(double valor, String nome) {
 	this.valor = valor;
@@ -16,7 +16,4 @@ public double getValor() {
 public String getNome() {
 	return nome;
 }
-
-
-
 }
